@@ -10,9 +10,9 @@ const ItemDetail = ({ products }) => {
   }, [itemId, products])
   return (
     <div>
-      <h1>{item.title}</h1>
-      <span>{item.description}</span>
-      <img src={item.imageUrl} alt={item.title} />
+      <h1>{item?.title}</h1>
+      <span>{item?.description}</span>
+      <img src={item?.imageUrl} alt={item?.title} />
     </div>
   )
 }
