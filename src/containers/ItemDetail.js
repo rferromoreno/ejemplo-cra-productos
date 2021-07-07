@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ItemDetail = ({ products }) => {
   const { itemId } = useParams();
@@ -12,7 +12,8 @@ const ItemDetail = ({ products }) => {
     <div>
       <h1>{item?.title}</h1>
       <span>{item?.description}</span>
-      <img src={item?.imageUrl} alt={item?.title} />
+      <div><img src={item?.imageSrc} alt={item?.title} /></div>
+      <div><Link to='/'>Volver al inicio</Link></div>
     </div>
   )
 }

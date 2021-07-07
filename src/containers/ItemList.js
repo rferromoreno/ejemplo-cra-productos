@@ -19,7 +19,7 @@ const ItemList = ({ products }) => {
         <div key={item.id}>
           <h1>{item.title}</h1>
           <span>{item.category}</span>
-          <Link to={`/item/${item.id}`}>Ver detalles</Link>
+          <div><Link to={`/item/${item.id}`}>Ver detalles</Link></div>
         </div>))}
     </div>
   )
