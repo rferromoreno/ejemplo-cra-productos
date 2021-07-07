@@ -2,23 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const ItemList = ({ products }) => {
-  const { categoryId } = useParams();
+  const { colorId } = useParams();
   const [list, setList] = useState([]);
   useEffect(() => {
     let productList;
-    if (categoryId) {
-      productList = products.filter(product => product.category === categoryId)
+    if (colorId) {
+      productList = products.filter(product => product.color === colorId)
     } else {
       productList = products;
     }
     setList(productList)
-  }, [categoryId, products]);
+  }, [colorId, products]);
   return (
     <div>
       {list.map(item => (
         <div key={item.id}>
           <h1>{item.title}</h1>
-          <span>{item.category}</span>
+          <p>{item.category}</p>
+          <p>{item.color}</p>
           <div><Link to={`/item/${item.id}`}>Ver detalles</Link></div>
         </div>))}
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetail from './containers/ItemDetail';
 import ItemList from './containers/ItemList';
+import NavBar from './components/NavBar';
 import getProducts from './api/getProducts';
 import './App.css';
 
@@ -13,9 +14,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <NavBar/>
         <Switch>
           <Route path='/item/:itemId'><ItemDetail products={products} /></Route>
-          <Route path='/category/:categoryId'><ItemList products={products} /></Route>
+          <Route path='/color/:colorId'><ItemList products={products} /></Route>
           <Route exact path='/'><ItemList products={products} /></Route>
         </Switch>
       </BrowserRouter>
