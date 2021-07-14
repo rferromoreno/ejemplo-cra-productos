@@ -12,6 +12,8 @@ const ItemDetail = ({ products }) => {
     <div>
       <h1>{item?.title}</h1>
       <span>{item?.description}</span>
+      <span>{item?.category}</span>
+      <span>{item?.color}</span>
       <div><img src={item?.imageSrc} alt={item?.title} /></div>
       <div><Link to='/'>Volver al inicio</Link></div>
     </div>
